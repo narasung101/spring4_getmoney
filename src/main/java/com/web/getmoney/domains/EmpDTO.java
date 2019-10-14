@@ -2,10 +2,12 @@ package com.web.getmoney.domains;
 
 import java.io.Serializable;
 
+import org.springframework.stereotype.Component;
+
 import lombok.Data;
 
-@Data
-public class EmpBean implements Serializable {
+@Data @Component
+public class EmpDTO implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	private String empno, ename, job, mgr, hiredate, sal, comm, deptno;

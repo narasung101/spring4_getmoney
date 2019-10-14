@@ -1,11 +1,13 @@
 package com.web.getmoney.services;
 
-import com.web.getmoney.domains.EmpBean;
+import org.springframework.stereotype.Component;
 
+import com.web.getmoney.domains.EmpDTO;
+@Component
 public interface EmpService  {
-	public EmpBean login(EmpBean param);
+	public EmpDTO login(EmpDTO param);
 	
-	public boolean join(EmpBean param);
+	public boolean join(EmpDTO param);
 	
 	
 
