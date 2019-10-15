@@ -3,7 +3,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   <mapper namespace="com.getmoney.web.mappers.AdminMapper">
-  <select id="countAdmin" resultType="int">
+  <select id="countAdmins" resultType="int">
 	SELECT COUNT(*) COUNT FROM ADMIN
   </select>
   

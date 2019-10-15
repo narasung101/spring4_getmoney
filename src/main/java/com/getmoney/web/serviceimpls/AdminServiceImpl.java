@@ -23,7 +23,7 @@ public class AdminServiceImpl implements AdminService {
 	@Override
 	public int countAdmins() {
 		// TODO Auto-generated method stub
-		return adminMapper.countAdmin();
+		return adminMapper.countAdmins();
 	}
 
 

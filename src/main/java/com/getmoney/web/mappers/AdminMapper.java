@@ -7,7 +7,7 @@ import com.getmoney.web.domains.AdminDTO;
 public interface AdminMapper {
 	
 	public boolean insertEmpDTO(AdminDTO param);
-	public int countAdmin();
+	public int countAdmins();
 	public AdminDTO selectbyLoginData(AdminDTO param);
 	
 	
