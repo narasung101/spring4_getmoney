@@ -58,6 +58,7 @@
 	<script src="<%=application.getContextPath()%>/resources/js/app.js"></script>
 	<script src="<%=application.getContextPath()%>/resources/js/cmm/router.js"></script>
 	<script src="<%=application.getContextPath()%>/resources/js/cmm/auth.js"></script>
+	<script src="<%=application.getContextPath()%>/resources/js/vue/auth_vue.js"></script>
 	<script>
 		app.run('<%=application.getContextPath()%>');
 	</script>
