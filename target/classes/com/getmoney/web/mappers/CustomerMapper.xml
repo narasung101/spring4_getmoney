@@ -1,0 +1,27 @@
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.getmoney.web.mappers.CustomerMapper">
+	<resultMap type="com.getmoney.web.domains.CustomerDTO" id="CUSTOMER"> <!-- id= 인스턴스변수, 이기종 언어 매핑 -->
+		<id column="MID" property="mid"/> <!-- pk -->
+		<result column="MPW" property="mpw"/>
+		<result column="MNAME" property="mname"/>
+		<result column="EMAIL" property="email"/>
+		<result column="PHONENUM" property="phonenum"/>
+		<result column="BIRTH" property="birth"/>
+		<result column="TOOJA" property="tooja"/>
+		<result column="REGISTER_DATE" property="registerDate"/>
+		<result column="TIER" property="tier"/>
+	</resultMap>
+
+	<select id="slectByIdPw" resultMap="CUSTOMER">
+		 SELECT * FROM CUSTOMER WHERE MID LIKE #{mid} AND MPW LIKE #{mpw}
+	</select>
+		
+	<insert id="insertIntoCusData">
+	    INSERT INTO CUSTOMER (MID, MPW, MNAME) 
+	    VALUES (#{mid}, #{mpw}, #{mname})
+	</insert>
+
+</mapper>

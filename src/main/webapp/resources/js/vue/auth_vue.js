@@ -279,9 +279,9 @@ auth_vue ={
 		return '<form id = "form_join" class="form-signin">'+
 		'    <img class="mb-4" src="<%=application.getContextPath() %>/resources/img/bootstrap-solid.svg" alt="" width="72" height="72">'+
 		'    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>'+
-		'    <label for="inputEmail" class="sr-only">Email address</label>'+
-		'    <input type="text" id="loginmid" class="form-control" placeholder="Email address" required="" autofocus="">'+
-		'    <label for="inputPassword" class="sr-only">Password</label>'+
+		'    <label for="loginmid" class="sr-only">Email address</label>'+
+		'    <input type="text" id="loginmid" class="form-control" placeholder="" required="" autofocus="">'+
+		'    <label for="loginmpw" class="sr-only">Password</label>'+
 		'    <input type="password" id="loginmpw" class="form-control" placeholder="Password" required="">'+
 		'    <div class="checkbox mb-3">'+
 		'      <label>'+

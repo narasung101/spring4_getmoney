@@ -1,14 +1,12 @@
 package com.getmoney.web.mappers;
 
 import org.springframework.stereotype.Repository;
-
-import com.getmoney.web.domains.AdminDTO;
+import com.getmoney.web.domains.CustomerDTO;
 @Repository
 public interface CustomerMapper {
 	
-	public boolean insertEmpDTO(AdminDTO param);
-	public int countEmp();
-	public AdminDTO selectbyLoginData(AdminDTO param);
+	public CustomerDTO slectByIdPw (CustomerDTO param);
+	public void insertIntoCusData(CustomerDTO param);
 	
 	
 }

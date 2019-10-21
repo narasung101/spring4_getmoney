@@ -11,14 +11,12 @@ import com.getmoney.web.services.AdminService;
 @Service
 public class AdminServiceImpl implements AdminService {
 	@Autowired AdminMapper adminMapper; 
-	
-	
+		
 	@Override
 	public AdminDTO login(AdminDTO param) {
 		
 	return null;
 	}
-
 
 	@Override
 	public int countAdmins() {

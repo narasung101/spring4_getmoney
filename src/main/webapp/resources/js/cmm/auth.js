@@ -21,7 +21,7 @@ auth = (()=>{
 		}
 	
 		let setContentView =()=>{
-			
+			login()
 		}
 		let join =()=>{
 			
@@ -35,7 +35,11 @@ auth = (()=>{
 				href: '#',
 				click : e=>{
 					e.preventDefault();
-					let data = {mid: $('#customerid').val(), mpw : $('#password').val()}
+					let data = {
+							mid: $('#customerid').val(),
+							mpw : $('#password').val(),
+							mname : $('#username').val()
+							}
 					alert('전송아이디'+data.mid)
 					$.ajax({
 						url : _+'/customer/join', 
@@ -56,7 +60,7 @@ auth = (()=>{
 		})
 		
 		.addClass("btn btn-lg btn-primary btn-block")
-		.appendTo('#btn_login')
+		.appendTo('#btn_join')
 		}
 			
 		let login =()=>{
@@ -64,14 +68,34 @@ auth = (()=>{
 				$('head')
 			.html(auth_vue.login_head(x))
 			$('body')
-			.addClass('text-center')
 			.html(auth_vue.login_body(x))
-			
+			.addClass('text-center')
 			$('<button>',{
 				type : "submit",
 				text : "Sign in",
 				click : e => {
 					e.preventDefault()
+					let datat = {mid : $('#loginmid').val(), mpw : $('#loginmpw').val()}
+					alert('전송되는 데이터 : '+ datat.mid + datat.mpw)									
+					$.ajax({
+						url: _+'/customer/login',
+						type: 'POST',
+						data: {
+							uid : $('#mid').val(),
+							pwd : $('#mpw').val()
+						},
+						datatype: 'json',
+						contentType: 'application/json', 
+						success : d =>{
+							alert(d.uname+'님 환영합니다')
+							mypage(d)
+						},
+						error: e =>{
+							alert('AJAX ERROR')
+						}
+																
+					})
+					
 				}
 			})
 			.addClass("btn btn-lg btn-primary btn-block")
