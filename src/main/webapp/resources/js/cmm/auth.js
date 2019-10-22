@@ -65,29 +65,25 @@ auth = (()=>{
 			
 		let login =()=>{
 			let x = {css: $.css(), img: $.img()}
-				$('head')
-			.html(auth_vue.login_head(x))
+			$('head').html(auth_vue.login_head(x))
 			$('body')
 			.html(auth_vue.login_body(x))
-			.addClass('text-center')
+			//.addClass('text-center')
 			$('<button>',{
 				type : "submit",
 				text : "Sign in",
 				click : e => {
 					e.preventDefault()
 					let datat = {mid : $('#loginmid').val(), mpw : $('#loginmpw').val()}
-					alert('전송되는 데이터 : '+ datat.mid + datat.mpw)									
+					alert('전송되는 데이터 : '+ datat.mid +','+ datat.mpw)									
 					$.ajax({
 						url: _+'/customer/login',
 						type: 'POST',
-						data: {
-							uid : $('#mid').val(),
-							pwd : $('#mpw').val()
-						},
+						data: JSON.stringify(datat),
 						datatype: 'json',
 						contentType: 'application/json', 
 						success : d =>{
-							alert(d.uname+'님 환영합니다')
+							alert(d.mname+'님 환영합니다')
 							mypage(d)
 						},
 						error: e =>{
@@ -100,6 +96,16 @@ auth = (()=>{
 			})
 			.addClass("btn btn-lg btn-primary btn-block")
 			.appendTo('#btn_login')
+		}	
+		let mypage =(d)=>{ 
+    	let x = {
+    			mid : d.mid,
+    			mpw : d.mpw,
+    			mname : d.mname
+    	}
+    	$('head').html(auth_vue.mypage_head(x))
+        $('body').html(auth_vue.mypage_body(x))
+        
 		}
 			
 	return {onCreate, join, login}

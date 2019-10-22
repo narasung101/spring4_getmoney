@@ -239,7 +239,7 @@ auth_vue ={
         '</div>'
 	},
 	
-	login_head:()=>{
+	login_head:x=>{
 		return '<meta charset="EUC-KR">'+
 		'  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">'+
 		'  <title>Document</title>'+
@@ -271,11 +271,11 @@ auth_vue ={
 		'      }'+
 		'    </style>'+
 		'    <!-- Custom styles for this template -->'+
-		'    <link href="<%=application.getContextPath() %>/resources/css/signin.css" rel="stylesheet">'+
+		'    <link href="'+x.css+'/signin.css" rel="stylesheet">'+
 		'  </head>'
 	},
 	
-	login_body:()=>{
+	login_body:x=>{
 		return '<form id = "form_join" class="form-signin">'+
 		'    <img class="mb-4" src="<%=application.getContextPath() %>/resources/img/bootstrap-solid.svg" alt="" width="72" height="72">'+
 		'    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>'+
@@ -290,20 +290,28 @@ auth_vue ={
 		'    </div>'+
 		'   <div id="btn_login"></div>'+
 		'    <p class="mt-5 mb-3 text-muted">© 2017-2019</p>'+
-		'  </form>'+
-		'    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>'+
-		    '<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>'+
-		    '<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>'+
-		'    <script src = "<%=application.getContextPath()%>/resources/js/app.js"></script>'+
-		'    <script src = "<%=application.getContextPath()%>/resources/js/cmm/router.js"></script>'+
-		'    <script src = "<%=application.getContextPath()%>/resources/js/cmm/auth.js"></script>'+
-		'<script>'+
-		'  app.run("<%=application.getContextPath() %>");'+
-		'</script>'
+		'  </form>'
 	},
 	
-	mypage_form:()=>{
-		return '<h1>my page</h1>'
+	mypage_head: x=>{
+		return ' <link href="'+x.css+'/signin.css" rel="stylesheet">    '
+	},
+	
+	mypage_body: x=>{
+		return '<body class="sejong-oneform">'+
+		'<div></div>'+ x.mid+
+		'<div>여기는 어디??</div>'+x.mpw+
+		'<div>3</div>'+x.mname+
+		'<div>4</div>'+
+		'<div>5</div>'+
+		'<div>6</div>'+
+		'<div>7</div>'+
+		'<div>8</div>'+
+		'<div>9</div>'+
+		'<div>10</div>'+
+		'<div>11</div>'+
+		'<div>12</div>'+
+		'</body>'
 	}
 	
 };
