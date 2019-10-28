@@ -3,7 +3,7 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.getmoney.web.mappers.CustomerMapper">
-	<resultMap type="com.getmoney.web.domains.CustomerDTO" id="CUSTOMER"> <!-- id= 인스턴스변수, 이기종 언어 매핑 -->
+	<resultMap Map="com.getmoney.web.domains.CustomerDTO" id="CUSTOMER"> <!-- id= 인스턴스변수, 이기종 언어 매핑 -->
 		<id column="MID" property="mid"/> <!-- pk -->
 		<result column="MPW" property="mpw"/>
 		<result column="MNAME" property="mname"/>
